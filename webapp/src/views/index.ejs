@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<%- include('_head') %>
+
+  <body>
+    <div id="app">
+      <%- include('_nav') %>
+        <%- include('_header') %>
+          <div class="container container-x">
+            <div class="envato-animate">
+              <span class="envato-balloon">h</span>
+              <span class="envato-balloon">e</span>
+              <span class="envato-balloon">l</span>
+              <span class="envato-balloon">l</span>
+              <span class="envato-balloon">o</span>
+              <span class="envato-balloon">J</span>
+              <span class="envato-balloon">S</span>
+            </div>
+            <div class="container container-x" style="margin-bottom: 12px">
+              <div class="col-md-12">
+                <% for(var i = 0; i < words.length; i ++) {%>
+                  <img class="avatarWall" src="<%= words[i].avatar %>" onerror="this.src='https://o4a7cbihz.qnssl.com/picture/57140c0c-4ffa-4dde-9757-570b53f96796'">
+                  <% } %>
+              </div>
+            </div>
+            <div class="container container-x">
+              <div class="well">
+                <h1>结束，是新的开始</h1>
+                <p><a class="btn btn-primary btn-lg" href="/words" role="button">不忘初心</a></p>
+              </div>
+            </div>
+
+            <div class="container container-x">
+              <div class="well">
+                <h1>成长，是点点滴滴的汇集</h1>
+                <p><a class="btn btn-primary btn-lg" href="/homework/list" role="button">不忘汗水</a></p>
+              </div>
+            </div>
+
+            <div class="container container-x">
+              <div class="well">
+                <h1>伙伴，在路上不再寂寞</h1>
+                <p><a class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#teamInfo"
+                    data-whatever="@fat">不忘战友</a></p>
+              </div>
+            </div>
+
+            <div class="col-md-8">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">作业榜</h3>
+                </div>
+                <div class="panel-body">
+                  <% Object.keys(rankingInfo).reverse().forEach(function(item, index) {%>
+                    <h3>
+                      <%= Object.keys(rankingInfo).length - index %>个文件</h3>
+                    <% rankingInfo[item].forEach(function(value) {  %>
+                      <p>
+                        <%= value %>
+                      </p>
+                      <% }); %>
+                        <% }); %>
+                </div>
+              </div>
+            </div>
+
+            <%- include('_slider') %>
+          </div>
+    </div>
+    <div class="footer">
+      <img class="avatar" src="https://ws1.sinaimg.cn/large/006tKfTcgy1fi7s7vo8y0j30hs0hsaay.jpg"></img>
+    </div>
+  </body>
+
+</html>
